@@ -1,0 +1,16 @@
+table {
+    margin-top: 15px;
+}
+
+.inner-table:hover{
+    background-color: rgb(223, 221, 221);
+}
+
+.img-circle {
+    border: 2px solid white;
+    max-height: 40px;
+}
+
+td {
+    vertical-align: middle;
+}
