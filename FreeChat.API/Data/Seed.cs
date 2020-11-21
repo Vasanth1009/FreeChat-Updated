@@ -24,8 +24,9 @@ namespace FreeChat.API.Data {
                     roleManager.CreateAsync(role).Wait();
                 }
                 foreach (var user in users) {
-                   userManager.CreateAsync(user, "password").Wait();
-                   userManager.AddToRoleAsync(user, "Member");
+                    user.Photos.SingleOrDefault().IsApproved = true;
+                    userManager.CreateAsync(user, "password").Wait();
+                    userManager.AddToRoleAsync(user, "Member");
                 }
 
                 var adminUser = new User

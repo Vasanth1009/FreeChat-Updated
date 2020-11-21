@@ -5,7 +5,6 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using FreeChat.API.Data;
 using FreeChat.API.Dtos;
 using FreeChat.API.Models;
 using Microsoft.AspNetCore.Authorization;

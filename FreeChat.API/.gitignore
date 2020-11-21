@@ -5,3 +5,5 @@ obj
 appsettings.json
 *.sqbpro
 wwwroot
+*.db-shm
+*.db-wal

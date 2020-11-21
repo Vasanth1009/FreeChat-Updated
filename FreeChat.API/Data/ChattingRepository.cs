@@ -30,13 +30,18 @@ namespace FreeChat.API.Data {
         }
 
         public async Task<Photo> GetPhoto (int id) {
-            var photo = await _context.Photos.FirstOrDefaultAsync (p => p.Id == id);
+            var photo = await _context.Photos.IgnoreQueryFilters().FirstOrDefaultAsync (p => p.Id == id);
 
             return photo;
         }
 
-        public async Task<User> GetUser (int id) {
-            var user = await _context.Users.FirstOrDefaultAsync (u => u.Id == id);
+        public async Task<User> GetUser (int id, bool isCurrentUser) {
+            var query = _context.Users.Include(p => p.Photos).AsQueryable();
+
+            if (isCurrentUser)
+                query = query.IgnoreQueryFilters();
+
+            var user = await query.FirstOrDefaultAsync (u => u.Id == id);
 
             return user;
         }

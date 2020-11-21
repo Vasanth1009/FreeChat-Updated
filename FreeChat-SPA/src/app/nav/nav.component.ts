@@ -23,7 +23,7 @@ export class NavComponent implements OnInit {
       this.alertify.success('Logged in successfully');
     },
     error => {
-      this.alertify.error(error);
+      this.alertify.error('Enter a Valid Username and Password');
     }, () => {
       this.router.navigate(['/members']);
     });
