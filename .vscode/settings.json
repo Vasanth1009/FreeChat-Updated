@@ -1,5 +1,0 @@
-{
-  "git.ignoreLimitWarning": true,
-  "appService.defaultWebAppToDeploy": "",
-  "appService.deploySubpath": "FreeChat.API\\bin\\Release\\netcoreapp3.1\\publish"
-}
